@@ -13,7 +13,7 @@ function Get-VirtualMachineSize {
         Connect-AzAccount -ErrorAction STOP
     }
 
-    $ExitArray = New-Item -TypeName "System.Collections.ArrayList"
+    $ExitArray = [System.Collections.ArrayList]@()
 
     $server = Get-AzVM -Name $VmName
     if($Server.VmSize -eq $VmSize) {
@@ -24,4 +24,6 @@ function Get-VirtualMachineSize {
 }
 
 Export-ModuleMember -Function Get-VirtualMachineSize
+
+
 
